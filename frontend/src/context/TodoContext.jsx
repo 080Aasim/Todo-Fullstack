@@ -5,7 +5,7 @@ import { AuthContext } from "./AuthContext.jsx";
 import { useContext } from "react";
 
 const api = axios.create({
-  baseURL: "http://localhost:4000/api",
+  baseURL: import.meta.env.VITE_API_URL || "/api",
 });
 
 api.interceptors.request.use((config) => {
