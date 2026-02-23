@@ -14,6 +14,10 @@ connectDb();
 app.use(express.json())
 app.use(cors())
 
+app.get("/",(req,res) => {
+    return res.json({success: true, message: "API WORKING"})
+})
+
 // API Endpoints
 app.use("/api/user", userRouter)
 app.use("/api/todo", todoRouter)
